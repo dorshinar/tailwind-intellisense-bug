@@ -15,7 +15,7 @@ const buttonVariants: Record<ButtonColor, Record<ButtonVariant, string[]>> = {
   primary: {
     contained: [
       "",
-      "hover:bg-bg-brand-primary-hover",
+      "hover:bg-bg-brand-primary-hover ",
       "focus:", // TODO
       "active:bg-bg-brand-primary-selected",
       "disabled:bg-bg-neutral-primary-disabled disabled:text-text-neutral-disabled",
