@@ -1,4 +1,41 @@
-import Image from 'next/image'
+import Image from "next/image";
+
+export type ButtonColor =
+  | "primary"
+  | "secondary"
+  | "system"
+  | "danger"
+  | "warning"
+  | "success"
+  | "premium";
+export type ButtonVariant = "contained" | "outline" | "text";
+export type ButtonSize = "small" | "medium" | "large";
+
+const buttonVariants: Record<ButtonColor, Record<ButtonVariant, string[]>> = {
+  primary: {
+    contained: [
+      "",
+      "hover:bg-bg-brand-primary-hover",
+      "focus:", // TODO
+      "active:bg-bg-brand-primary-selected",
+      "disabled:bg-bg-neutral-primary-disabled disabled:text-text-neutral-disabled",
+    ],
+    outline: [
+      "border border-border-brand-default text-text-brand-default",
+      "hover:bg-bg-brand-light-default hover:border-border-brand-hover hover:text-text-brand-hover",
+      "focus:", // TODO
+      "active:bg-bg-brand-light-selected active:border-border-brand-selected active:text-text-brand-selected",
+      "disabled:border-border-neutral-disabled disabled:text-text-neutral-disabled",
+    ],
+    text: [
+      "",
+      "hover:bg-bg-brand-light-selected",
+      "focus:", // TODO
+      "",
+      "",
+    ],
+  },
+};
 
 export default function Home() {
   return (
@@ -15,7 +52,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -47,7 +84,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
+            Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -64,7 +101,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -81,7 +118,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Templates{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -98,7 +135,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Deploy{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -109,5 +146,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
